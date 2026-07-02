@@ -18,10 +18,27 @@ python app/main.py
 
 ## View saved snapshots
 
+### Display in terminal
+
 ```bash
 python app/view.py --latest
 python app/view.py --today
 python app/view.py --date 2026-07-01
+python app/view.py --limit 20
+```
+
+### Export as HTML table (open in browser)
+
+```bash
+python app/view.py --today --html
+# Creates: data/ranking-2026-07-01T17-00-00JST.html
+```
+
+### Export as CSV (open in Excel)
+
+```bash
+python app/view.py --today --csv
+# Creates: data/ranking-2026-07-01T17-00-00JST.csv
 ```
 
 ## Next steps

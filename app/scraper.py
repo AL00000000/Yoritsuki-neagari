@@ -39,6 +39,10 @@ def fetch_rendered_ranking(url: str) -> list[dict[str, Any]]:
                             name: nameCell?.querySelector('a')?.textContent.trim() ?? nameCell?.textContent.trim() ?? '',
                             code,
                             market: cells[2]?.textContent.trim() ?? '',
+                            current_price: cells[3]?.textContent.trim() ?? '',
+                            prev_change: cells[4]?.textContent.trim() ?? '',
+                            prev_pct: cells[5]?.textContent.trim() ?? '',
+                            open_pct: cells[6]?.textContent.trim() ?? '',
                         };
                     });
             }
@@ -65,6 +69,10 @@ def fetch_rendered_ranking(url: str) -> list[dict[str, Any]]:
                 "name": name,
                 "code": code,
                 "market": str(row.get("market", "")),
+                "current_price": str(row.get("current_price", "")),
+                "prev_change": str(row.get("prev_change", "")),
+                "prev_pct": str(row.get("prev_pct", "")),
+                "open_pct": str(row.get("open_pct", "")),
             }
         )
     return rows
